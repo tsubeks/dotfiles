@@ -2,17 +2,17 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/vim-easy-align'
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'junegunn/vim-easy-align'
 " Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 " Plugin outside ~/.vim/plugged with post-update hook
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
+" Plug 'edkolev/tmuxline.vim'
 Plug 'kaicataldo/material.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 set nocompatible            " Disable compatibility to old-time vi
