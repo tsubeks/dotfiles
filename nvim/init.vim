@@ -33,11 +33,11 @@ set cc=80                   " set an 80 column border for good coding style
 if (has("termguicolors"))
   set termguicolors
 endif
-set background=dark
-colorscheme material 
-let g:material_terminal_italics = 1
+" set background=light
+" colorscheme material 
+" let g:material_terminal_italics = 1
 " let g:material_theme_style = 'default' | 'palenight' | 'dark'
-let g:lightline = { 'colorscheme': 'material_vim' }
+" let g:lightline = { 'colorscheme': 'material_vim' }
 set laststatus=2
 set noshowmode
 
