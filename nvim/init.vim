@@ -25,6 +25,12 @@ endif
 " <leader>
 let mapleader = ","
 
+" Use ; for commands.
+nnoremap ; :
+
+" Use Q to execute default register.
+nnoremap Q @q   
+
 " Quickly open/reload vim
 nnoremap <leader>ev :split $MYVIMRC<CR>  
 nnoremap <leader>sv :source $MYVIMRC<CR>     
@@ -118,7 +124,7 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 set cc=80                   " set an 80 column border for good coding style
- autocmd TextChanged,TextChangedI <buffer> silent write
+" autocmd TextChanged,TextChangedI <buffer> silent write
 "
 "
 
