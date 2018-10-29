@@ -133,6 +133,11 @@ endif
 " Search and Replace
 nmap <Leader>s :%s//g<Left><Left>
 
+"" Directories for swp files
+set nobackup
+set noswapfile
+set fileformats=unix,dos,mac
+
 set cursorline              " highlight current line
 set cursorcolumn            " highlight current column
 set nocompatible            " Disable compatibility to old-time vi
@@ -142,7 +147,8 @@ set formatoptions+=o    " Continue comment marker in new lines.
 set mouse=a                 " middle-click paste with mouse
 set hlsearch                " highlight search results
 set tabstop=4               " number of columns occupied by a tab character
-set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
+set backspace=indent,eol,start
+set softtabstop=0           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
