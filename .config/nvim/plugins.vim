@@ -21,6 +21,8 @@ call plug#begin('~/.vim/bundle')
 	Plug 'tpope/vim-surround'
 	Plug 'wellle/targets.vim'
 	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+	Plug 'pangloss/vim-javascript'
+	Plug 'jparise/vim-graphql'
 
 	if IsTermux()
 		Plug 'w0rp/ale'
