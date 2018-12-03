@@ -1,5 +1,7 @@
+let mapleader = ","
+
 " Highlights word under cursor by placing it in @/ register
-	nnoremap <silent> * :set hlsearch<Cr>:exe "let @/='\\<'.expand('<cword>').'\\>'"<Cr>
+nnoremap <silent> * :set hlsearch<Cr>:exe "let @/='\\<'.expand('<cword>').'\\>'"<Cr>
 	nnoremap <silent> <a-*> :set hlsearch<Cr>:exe 'let @/=expand("<cWORD>")'<Cr>
 
 " Rename word under cursor in whole document
@@ -10,9 +12,9 @@
 
 " Toggle terminal on/off (neovim)
 if has('nvim')
-	nnoremap <silent><A-t> :call TermToggle(12)<CR>
-	inoremap <silent><A-t> <Esc>:call TermToggle(12)<CR>
-	tnoremap <silent><A-t> <C-\><C-n>:call TermToggle(12)<CR>
+	nnoremap <silent><Leader>t :call TermToggle(12)<CR>
+	inoremap <silent><Leader>t <Esc>:call TermToggle(12)<CR>
+	tnoremap <silent><Leader>t <C-\><C-n>:call TermToggle(12)<CR>
 	" Terminal go back to normal mode
 	tnoremap <silent><Esc> <C-\><C-n>
 endif
@@ -23,19 +25,22 @@ if !IsTermux()
 	nnoremap <C-d> :Denite <Tab>
 
 " Tagbar
-	noremap <silent><A-b> <Esc>:TagbarToggle<CR>
-	tnoremap <silent><A-b> <C-\><C-n>:TagbarToggle<CR>
+	noremap <silent><Leader>b <Esc>:TagbarToggle<CR>
+	tnoremap <silent><Leader>b <C-\><C-n>:TagbarToggle<CR>
 
 " NERDTree
-	noremap <silent><A-n> <Esc>:NERDTreeToggle<CR>
-	tnoremap <silent><A-n> <C-\><C-n>:NERDTreeToggle<CR>
+	noremap <silent><Leader>n <Esc>:NERDTreeToggle<CR>
+	tnoremap <silent><Leader>n <C-\><C-n>:NERDTreeToggle<CR>
 endif
 "
 " Common fixes
+"	window/buffer managment
+"
+	nnoremap <silent><C-w>w <Esc>:bd<CR>
 	nnoremap <silent>gb :bn<Cr>
 	nnoremap <silent>gB :bp<Cr>
-	nnoremap <silent>ge :exec "e ".expand("<cWORD>")<Cr>
 
+	nnoremap <silent>ge :exec "e ".expand("<cWORD>")<Cr>
 	" The most important fix
 	nmap <F1> <nop>
 	imap <F1> <nop>
@@ -60,12 +65,12 @@ endif
 	nnoremap <A-a> va
 
 " Move lines around
-	nnoremap <silent><A-j> :m .+1<CR>==
-	nnoremap <silent><A-k> :m .-2<CR>==
-	inoremap <silent><A-j> <Esc>:m .+1<CR>==gi
-	inoremap <silent><A-k> <Esc>:m .-2<CR>==gi
-	vnoremap <silent><A-j> :m '>+1<CR>gv=gv
-	vnoremap <silent><A-k> :m '<-2<CR>gv=gv
+	nnoremap <silent><C-j> :m .+1<CR>==
+	nnoremap <silent><C-k> :m .-2<CR>==
+	inoremap <silent><C-j> <Esc>:m .+1<CR>==gi
+	inoremap <silent><C-k> <Esc>:m .-2<CR>==gi
+	vnoremap <silent><C-j> :m '>+1<CR>gv=gv
+	vnoremap <silent><C-k> :m '<-2<CR>gv=gv
 
 " Move across lines as they appear on display
 	nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'

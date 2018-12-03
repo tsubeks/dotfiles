@@ -1,3 +1,6 @@
+" Prettier
+let g:prettier#autoformat = 0
+
 " Airline
 if !IsTermux()
 	set laststatus=2

@@ -20,6 +20,7 @@ call plug#begin('~/.vim/bundle')
 	Plug 'tomtom/tcomment_vim'
 	Plug 'tpope/vim-surround'
 	Plug 'wellle/targets.vim'
+	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 	if IsTermux()
 		Plug 'w0rp/ale'
