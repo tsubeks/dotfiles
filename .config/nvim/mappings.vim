@@ -1,4 +1,10 @@
+" Main
 let mapleader = ","
+map ; :
+noremap ;; ;
+noremap ,, ,
+nnoremap <leader>so :source ~/.config/nvim/init.vim<cr>
+
 
 " Highlights word under cursor by placing it in @/ register
 nnoremap <silent> * :set hlsearch<Cr>:exe "let @/='\\<'.expand('<cword>').'\\>'"<Cr>

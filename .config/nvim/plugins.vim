@@ -20,13 +20,15 @@ call plug#begin('~/.vim/bundle')
 	Plug 'tomtom/tcomment_vim'
 	Plug 'tpope/vim-surround'
 	Plug 'wellle/targets.vim'
+
+	" Javascript
 	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 	Plug 'pangloss/vim-javascript'
 	Plug 'jparise/vim-graphql'
 
 	if IsTermux()
-		Plug 'w0rp/ale'
-		Plug 'zchee/deoplete-clang'
+	  Plug 'w0rp/ale'
+      Plug 'zchee/deoplete-clang'
 	else
 		Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 		Plug 'majutsushi/tagbar'
