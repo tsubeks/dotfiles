@@ -19,6 +19,7 @@
 	set lazyredraw
 	set hidden
 	set inccommand=nosplit
+	set colorcolumn=80
 
 " Folds
 	set foldmethod=indent
@@ -54,6 +55,8 @@
 
 " Highlights
 	" Common highlights
+	" 80 Lines styles
+		highlight ColorColumn ctermbg=gray
 		highlight EndOfBuffer guifg=bg guibg=NONE
 		highlight ErrorSign guibg=#3c3836 guifg=#fb4934
 		highlight WarningSign guibg=#3c3836 guifg=#fabd2f
@@ -66,14 +69,14 @@
 		highlight Sneak guifg=black guibg=orange
 
 " Autocmds
-	augroup Trailing
-		autocmd!
-		autocmd BufWritePre *.* :call RemoveTrailingSpaces()
-	augroup end
+	" augroup Trailing
+	" 	autocmd!
+	" 	autocmd BufWritePre *.* :call RemoveTrailingSpaces()
+	" augroup end
 
 	" Enter insert mode when terminal shows up
-	augroup Term
-		autocmd!
-		autocmd TermOpen * setlocal nonu nornu signcolumn=no
-		autocmd TermOpen * startinsert
-	augroup end
+	" augroup Term
+	" 	autocmd!
+	" 	autocmd TermOpen * setlocal nonu nornu signcolumn=no
+	" 	autocmd TermOpen * startinsert
+	" augroup end

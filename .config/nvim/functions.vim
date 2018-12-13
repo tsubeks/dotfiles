@@ -8,6 +8,7 @@
 		call setreg('/', l:save_slash)
 	endfunction
 
+
 " Terminal Function
     let s:term_buf = 0
     let s:term_win = 0
@@ -73,9 +74,9 @@
 	endfunction
 
 " Check if we in termux
-	function! IsTermux()
-		return match($PATH, "termux") >= 0
-	endfunction
+	" function! IsTermux()
+	" 	return match($PATH, "termux") >= 0
+	" endfunction
 
 " Add syntax blocks
 	function! DefineSyntaxRegion(filetype, start, end, Highlight) abort
