@@ -5,12 +5,12 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 let s:config_path = $HOME.'/.config/nvim/'
 let s:config_files = [
-	\'functions.vim',
-	\'plugins.vim',
-	\'common.vim',
-	\'languages.vim',
-	\'mappings.vim',
-	\'plugin_conf.vim',
+	" \'functions.vim',
+	" \'plugins.vim',
+	" \'common.vim',
+	" \'languages.vim',
+	" \'mappings.vim',
+	" \'plugin_conf.vim',
 \]
 
 for file in s:config_files
