@@ -1,0 +1,1 @@
+/Users/trututu/.fzf/shell/key-bindings.fish

@@ -1,3 +1,6 @@
 [submodule ".config/kak/.config/kak/plugins/plug.kak"]
 	path = .config/kak/.config/kak/plugins/plug.kak
 	url = https://github.com/andreyorst/plug.kak.git
+[submodule ".config/space-vim"]
+	path = .config/space-vim
+	url = https://github.com/liuchengxu/space-vim.git
