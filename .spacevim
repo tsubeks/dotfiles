@@ -34,6 +34,7 @@ endfunction
 function! UserConfig()
   let g:spacevim_lsp_prefer_coc = 1
   au BufWrite * :Autoformat
+  " au BufWrite *.rktl :racket -f file.scm -i
   " If you have installed the powerline fonts and want to enable airline layer
   " let g:airline_powerline_fonts=1
 
@@ -51,5 +52,5 @@ function! UserConfig()
   endfunction
 
   " If your terminal(-emulator) supports true colors, uncomment the line below
-  " call s:enable_termgui()
+  call s:enable_termgui()
 endfunction
