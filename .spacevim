@@ -12,8 +12,11 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 
 " Enable the existing layers in space-vim
 let g:spacevim_layers = [
-      \ 'fzf', 'better-defaults', 'which-key',
-      \ 'formatting', 'file-manager', 'tmux', 'editing', 'git',
+      \ 'fzf', 'ctrlp', 'better-defaults',
+      \ 'which-key', 'javascript',
+      \ 'html', 'markdown',
+      \ 'formatting', 'file-manager',
+      \ 'tmux', 'editing', 'git', 'better-motion',
       \ 'lsp', 'github', 'goyo', 'emoji'
       \ ]
 
@@ -34,6 +37,12 @@ endfunction
 function! UserConfig()
   let g:spacevim_lsp_prefer_coc = 1
   au BufWrite * :Autoformat
+  set mouse=a
+  let g:user_emmet_settings = {
+        \ 'javascript' : {
+        \     'extends' : 'jsx',
+        \ },
+        \}
   " au BufWrite *.rktl :racket -f file.scm -i
   " If you have installed the powerline fonts and want to enable airline layer
   " let g:airline_powerline_fonts=1
