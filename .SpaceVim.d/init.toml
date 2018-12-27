@@ -1,0 +1,87 @@
+# All SpaceVim option below [option] section
+[options]
+  colorscheme = "OceanicNext"
+  background = "dark"
+  enable_guicolors = true
+  statusline_separator = "nil"
+  statusline_inactive_separator = "bar"
+  buffer_index_type = 4
+  enable_tabline_filetype_icon = true
+  enable_statusline_display_mode = false
+  vimcompatible = false
+  bootstrap_before = "myspacevim#before"
+  bootstrap_after = "myspacevim#after"
+
+[[layers]]
+  name = "default"
+
+[[layers]]
+	name = "colorscheme"
+  colorscheme = "OceanicNext"
+  colorscheme_bg = "dark"
+
+# add custom_plugins: https://github.com/mhartington/oceanic-next
+[[custom_plugins]]
+	name = "mhartington/oceanic-next"
+	merged = 0
+
+# Enable autocomplete layer
+
+[[layers]]
+  name = "autocomplete"
+  auto-completion-return-key-behavior = "complete"
+  auto-completion-tab-key-behavior = "smart"
+
+[[layers]]
+  name = "lsp"
+  filetypes = [
+    # "lisp",
+    # "haskell",
+    "javascript",
+    "sh"
+  ]
+
+[[layers]]
+  name = "shell"
+  default_position = "top"
+  default_height = 30
+
+[[layers]]
+  name = "tmux"
+
+[[layers]]
+  name = "format"
+
+[[layers]]
+  name = "tools"
+  enable = true
+
+[[layers]]
+name = "fzf"
+
+[[layers]]
+  name = "VersionControl"
+
+[[layers]]
+  name = "git"
+
+[[layers]]
+  name = "github"
+
+[[layers]]
+  name = "lang#dockerfile"
+
+[[layers]]
+  name = "lang#graphql"
+
+[[layers]]
+  name = "lang#javascript"
+
+[[layers]]
+  name = "lang#extra"
+
+[[layers]]
+  name = "lang#html"
+
+[[layers]]
+  name = "lang#haskell"
