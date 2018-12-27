@@ -8,7 +8,7 @@ alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 # alias open=start
 # ;;
 
-neofetch
+# neofetch
 
 source $HOME/.zplug/init.zsh
 
@@ -32,4 +32,5 @@ if ! zplug check --verbose; then
     echo
 fi
 
-zplug load --verbose
+zplug load 
+# --verbose
