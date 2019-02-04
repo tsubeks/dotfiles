@@ -10,6 +10,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-better-default'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
+set mouse=a
+
 augroup nerd_loader
 	autocmd!
 	autocmd VimEnter * silent! autocmd! FileExplorer
