@@ -17,4 +17,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-better-default'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
+Plug 'w0rp/ale'
+
 call plug#end()
