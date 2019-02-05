@@ -5,6 +5,12 @@ let mapleader = " "
 noremap <C-F> <C-D>
 noremap <C-B> <C-U>
 
+""" gitgutter
+nmap ]c <Plug>GitGutterNextHunk
+nmap [c <Plug>GitGutterPrevHunk
+nmap <Leader>hs <Plug>GitGutterStageHunk
+nmap <Leader>hu <Plug>GitGutterUndoHunk
+
 " Toggle terminal on/off (neovim)
 " if has('nvim')
 " 	nnoremap <silent><leader><t> :call TermToggle(12)<CR>
@@ -107,3 +113,11 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+" map f <Plug>Sneak_s
+" map F <Plug>Sneak_S
+
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T

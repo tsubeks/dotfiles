@@ -3,10 +3,28 @@
 """""""""""""""""""
 
 " let g:vim_better_default_key_mapping = 0
+"
+
+"""""""""
+" Sneak "
+"""""""""
+
+let g:sneak#label = 1
+
 
 """"""""""""
 " NERDTree "
 """"""""""""
+
+autocmd vimenter * NERDTree 
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:NERDTreeWinPos = "right"
+let g:NERDTreeShowHidden = 1
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 augroup nerd_loader
 	autocmd!

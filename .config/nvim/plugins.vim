@@ -7,7 +7,12 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'airblade/vim-gitgutter'
+
+Plug 'editorconfig/editorconfig-vim'
+
 " Plug 'liuchengxu/vim-better-default'
+Plug 'justinmk/vim-sneak'
 
 Plug 'terryma/vim-multiple-cursors'
 
