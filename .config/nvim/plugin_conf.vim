@@ -2,7 +2,7 @@
 " Better defaults "
 """""""""""""""""""
 
-let g:vim_better_default_key_mapping = 0
+" let g:vim_better_default_key_mapping = 0
 
 """"""""""""
 " NERDTree "

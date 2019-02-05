@@ -361,7 +361,7 @@ live_config_reload: true
 enable_experimental_conpty_backend: false
 
 # Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: true
+alt_send_esc: false
 
 # Key bindings
 #
@@ -544,6 +544,10 @@ key_bindings:
   - { key: F10,      mods: Control, chars: "\x1b[21;5~"                  }
   - { key: F11,      mods: Control, chars: "\x1b[23;5~"                  }
   - { key: F12,      mods: Control, chars: "\x1b[24;5~"                  }
+  - { key: J, mods: Alt, chars: "\x1bj" }
+  - { key: K, mods: Alt, chars: "\x1bk" }
+  - { key: H, mods: Alt, chars: "\x1bh" }
+  - { key: L, mods: Alt, chars: "\x1bl" }
   - { key: F1,       mods: Alt,     chars: "\x1b[1;6P"                   }
   - { key: F2,       mods: Alt,     chars: "\x1b[1;6Q"                   }
   - { key: F3,       mods: Alt,     chars: "\x1b[1;6R"                   }
