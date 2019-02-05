@@ -9,6 +9,8 @@ Plug 'junegunn/fzf.vim'
 
 " Plug 'liuchengxu/vim-better-default'
 
+Plug 'terryma/vim-multiple-cursors'
+
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 Plug 'tomtom/tcomment_vim'

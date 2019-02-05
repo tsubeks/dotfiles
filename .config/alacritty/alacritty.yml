@@ -548,6 +548,7 @@ key_bindings:
   - { key: K, mods: Alt, chars: "\x1bk" }
   - { key: H, mods: Alt, chars: "\x1bh" }
   - { key: L, mods: Alt, chars: "\x1bl" }
+  - { key: N, mods: Alt, chars: "\x1bn" }
   - { key: F1,       mods: Alt,     chars: "\x1b[1;6P"                   }
   - { key: F2,       mods: Alt,     chars: "\x1b[1;6Q"                   }
   - { key: F3,       mods: Alt,     chars: "\x1b[1;6R"                   }
