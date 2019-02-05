@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-eunuch'
 
 Plug 'w0rp/ale'
 
