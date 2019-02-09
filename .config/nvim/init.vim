@@ -8,8 +8,8 @@ let s:config_files = [
 	\'plugins.vim',
 	\'common.vim',
 	\'languages.vim',
-	\'mappings.vim',
 	\'plugin_conf.vim',
+	\'mappings.vim',
 \]
 
 for file in s:config_files
