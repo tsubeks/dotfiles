@@ -1,8 +1,8 @@
 {
   // looks
   "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#6fe90c",
-    "titleBar.inactiveBackground": "#76fa0acc"
+    "titleBar.activeBackground": "#e90c4e",
+    "titleBar.inactiveBackground": "#a20afacc"
   },
   "[reason]": {
     "editor.formatOnSave": true
@@ -36,7 +36,7 @@
   "workbench.settings.editor": "json",
   "workbench.editor.showIcons": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
-  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.colorTheme": "Solarized Dark",
   // window
   "window.zoomLevel": 2,
   "window.restoreWindows": "all",
