@@ -1,7 +1,8 @@
 {
   // looks
   "workbench.colorCustomizations": {
-    "editor.lineHighlightBackground": "#212121"
+    "titleBar.activeBackground": "#6fe90c",
+    "titleBar.inactiveBackground": "#76fa0acc"
   },
   "[reason]": {
     "editor.formatOnSave": true
