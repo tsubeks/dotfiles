@@ -9,8 +9,9 @@
 " vim-airline "
 """""""""""""""
 
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+" Plugin disabled
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
 
 
 """""""""

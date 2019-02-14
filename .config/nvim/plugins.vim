@@ -22,9 +22,13 @@ Plug 'tomtom/tcomment_vim'
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-sensible'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
+" Does support tmux sync
+Plug 'itchyny/lightline.vim'
 
 Plug 'w0rp/ale'
 
