@@ -5,6 +5,14 @@
 " let g:vim_better_default_key_mapping = 0
 "
 
+"""""""""""""""
+" vim-airline "
+"""""""""""""""
+
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+
 """""""""
 " Sneak "
 """""""""
