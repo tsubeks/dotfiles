@@ -29,6 +29,7 @@ Plug 'tpope/vim-sensible'
 
 " Does support tmux sync
 Plug 'itchyny/lightline.vim'
+Plug 'edkolev/tmuxline.vim'
 
 Plug 'w0rp/ale'
 

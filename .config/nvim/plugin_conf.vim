@@ -5,13 +5,22 @@
 " let g:vim_better_default_key_mapping = 0
 "
 
-"""""""""""""""
-" vim-airline "
-"""""""""""""""
+""""""""
+" Line "
+""""""""
 
 " Plugin disabled
 " let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'y'    : '%R'}
+
+" call Tmuxline lightline
 
 
 """""""""
