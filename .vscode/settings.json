@@ -226,9 +226,10 @@
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
   "window.titleBarStyle": "custom",
-  "workbench.iconTheme": null,
+  "workbench.iconTheme": "file-icons-colourless",
   "emmet.triggerExpansionOnTab": true,
   "html.autoClosingTags": false,
   "terminal.integrated.rendererType": "dom",
-  "workbench.colorTheme": "Ayu Mojave"
+  "workbench.colorTheme": "Ayu Mojave",
+  "gitlens.mode.active": "zen"
 }
