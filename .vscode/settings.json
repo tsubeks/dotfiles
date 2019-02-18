@@ -33,7 +33,6 @@
   "workbench.settings.editor": "json",
   "workbench.editor.showIcons": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
-  "workbench.colorTheme": "Ayu Mirage",
   // window
   "window.zoomLevel": 2,
   "window.restoreWindows": "all",
@@ -227,7 +226,9 @@
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
   "window.titleBarStyle": "custom",
-  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.iconTheme": null,
   "emmet.triggerExpansionOnTab": true,
-  "html.autoClosingTags": false
+  "html.autoClosingTags": false,
+  "terminal.integrated.rendererType": "dom",
+  "workbench.colorTheme": "Ayu Mojave"
 }
