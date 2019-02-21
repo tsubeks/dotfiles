@@ -202,5 +202,6 @@
   "html.autoClosingTags": false,
   "terminal.integrated.rendererType": "dom",
   "workbench.colorTheme": "Ayu Mojave",
-  "gitlens.mode.active": "zen"
+  "gitlens.mode.active": "zen",
+  "workbench.sideBar.location": "right"
 }
