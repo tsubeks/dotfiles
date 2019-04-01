@@ -26,6 +26,9 @@ Plug 'tpope/vim-sensible'
 
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
+Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim'
+
 
 " Does support tmux sync
 Plug 'itchyny/lightline.vim'

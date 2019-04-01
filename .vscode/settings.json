@@ -203,5 +203,7 @@
   "terminal.integrated.rendererType": "dom",
   "workbench.colorTheme": "Ayu Mojave",
   "gitlens.mode.active": "zen",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

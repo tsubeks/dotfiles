@@ -9,10 +9,6 @@
 " Line "
 """"""""
 
-" Plugin disabled
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -20,7 +16,12 @@ let g:tmuxline_preset = {
       \'cwin' : '#I #W',
       \'y'    : '%R'}
 
-" call Tmuxline lightline
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+
+Tmuxline lightline
+TmuxlineSnapshot $HOME/.config/tmux/line.conf!
 
 
 """""""""
@@ -34,9 +35,9 @@ let g:sneak#label = 1
 " NERDTree "
 """"""""""""
 
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowHidden = 1
@@ -44,15 +45,15 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-augroup nerd_loader
-	autocmd!
-	autocmd VimEnter * silent! autocmd! FileExplorer
-	autocmd BufEnter,BufNew *
-		  \  if isdirectory(expand('<amatch>'))
-		  \|   call plug#load('nerdtree')
-		  \|   execute 'autocmd! nerd_loader'
-		  \| endif
-augroup END
+" augroup nerd_loader
+" 	autocmd!
+" 	autocmd VimEnter * silent! autocmd! FileExplorer
+" 	autocmd BufEnter,BufNew *
+" 		  \  if isdirectory(expand('<amatch>'))
+" 		  \|   call plug#load('nerdtree')
+" 		  \|   execute 'autocmd! nerd_loader'
+" 		  \| endif
+" augroup END
 
 """""""
 " FZF "

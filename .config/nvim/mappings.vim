@@ -40,11 +40,8 @@ vnoremap <silent><A-k> :m '<-2<CR>gv=gv
 " Common fixes
 nnoremap <silent>gb :bn<Cr>
 nnoremap <silent>gB :bp<Cr>
- "nnoremap <silent>ge :exec "e ".expand("<cWORD>")<Cr>
+nnoremap <silent>ge :exec "e ".expand("<cWORD>")<Cr>
 
-" The most important fix
-"nmap <F1> <nop>
-"imap <F1> <nop>
 
 " Kakoune style mappings
 noremap gj G

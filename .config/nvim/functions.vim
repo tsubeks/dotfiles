@@ -2,7 +2,7 @@ let s:hidden_all = 0
 
 set noshowmode
 set noruler
-set laststatus=0
+set laststatus=2
 set noshowcmd
 
 function! ToggleHiddenAll()
