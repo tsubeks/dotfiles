@@ -24,7 +24,9 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-sensible'
 
 Plug 'sheerun/vim-polyglot'
+
 Plug 'joshdick/onedark.vim'
+Plug 'connorholyday/vim-snazzy'
 
 
 " Does support tmux sync

@@ -17,11 +17,12 @@ let g:tmuxline_preset = {
       \'y'    : '%R'}
 
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-
-command Tmuxline lightline
-command TmuxlineSnapshot $HOME/.config/tmux/line.conf
+\ 'colorscheme': 'onedark',
+\ }
+" ???
+"
+" command Tmuxline vim_statusline_2
+" command TmuxlineSnapshot $HOME/.config/tmux/line.conf
 
 
 """""""""

@@ -1,16 +1,10 @@
 set mouse=a
 
-if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-if (has("termguicolors"))
-  set termguicolors
-endif
-
+set termguicolors
 syntax on
-colorscheme onedark
 set background=dark
+colorscheme onedark
+
 
 " 80 chars/line
 " set textwidth=0
