@@ -1,6 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -11,7 +11,6 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'editorconfig/editorconfig-vim'
 
-" Plug 'liuchengxu/vim-better-default'
 Plug 'justinmk/vim-sneak'
 
 Plug 'terryma/vim-multiple-cursors'
@@ -24,8 +23,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-sensible'
 
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 
