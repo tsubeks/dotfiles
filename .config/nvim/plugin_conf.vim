@@ -20,8 +20,8 @@ let g:lightline = {
   \ 'colorscheme': 'onedark',
   \ }
 
-Tmuxline lightline
-TmuxlineSnapshot $HOME/.config/tmux/line.conf!
+command Tmuxline lightline
+command TmuxlineSnapshot $HOME/.config/tmux/line.conf
 
 
 """""""""

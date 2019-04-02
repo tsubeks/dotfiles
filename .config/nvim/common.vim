@@ -19,6 +19,8 @@ endif
 
 syntax on
 colorscheme onedark
+set background=dark
+let &t_ut=''
 
 " 80 chars/line
 set textwidth=0
