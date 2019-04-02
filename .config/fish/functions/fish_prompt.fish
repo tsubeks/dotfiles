@@ -1,0 +1,1 @@
+/Users/trututu/.local/share/omf/themes/l/fish_prompt.fish
