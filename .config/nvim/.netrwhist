@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/trututu/Code/dotfiles/.config/nvim'
 let g:netrw_dirhist_2='/Users/trututu/.config/fish'
 let g:netrw_dirhist_3='/Users/trututu/Code/dotfiles/.config/nvim'
 let g:netrw_dirhist_4='/Users/trututu/Code/dotfiles'
 let g:netrw_dirhist_5='/Users/trututu/Code/dotfiles/.config/tmux'
 let g:netrw_dirhist_6='/Users/trututu/Code/dotfiles/.config/fish'
+let g:netrw_dirhist_7='/Users/trututu/Code/don-front'
