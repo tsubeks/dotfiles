@@ -1,0 +1,100 @@
+{
+	"name": "indent-one-space",
+	"displayName": "Indent one space",
+	"description": "Move code to left or right with a distance of one whitespace",
+	"version": "0.2.5",
+	"publisher": "usernamehw",
+	"license": "MIT",
+	"icon": "img/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/usernamehw/vscode-indent-one-space"
+	},
+	"galleryBanner": {
+		"theme": "dark",
+		"color": "#333333"
+	},
+	"bugs": {
+		"url": "https://github.com/usernamehw/vscode-indent-one-space/issues"
+	},
+	"engines": {
+		"vscode": "^1.17.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"indent",
+		"indentation"
+	],
+	"activationEvents": [
+		"onCommand:extension.indentOneSpace",
+		"onCommand:extension.reverseIndentOneSpace"
+	],
+	"main": "./dist/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Indent one space",
+			"properties": {
+				"indentOneSpace.workOnSingleLine": {
+					"type": "boolean",
+					"default": true,
+					"description": "Command will execute even when only 1 line is selected."
+				},
+				"indentOneSpace.cramReversed": {
+					"type": "boolean",
+					"default": true,
+					"description": "Outdent lines even if one of them reached column 0 (gutter)."
+				},
+				"indentOneSpace.onlyCompleteRange": {
+					"type": "boolean",
+					"default": false,
+					"description": "Indent only when range is on either side has only whitespace characters and further - line boundaries."
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.indentOneSpace",
+				"title": "Indent one space"
+			},
+			{
+				"command": "extension.reverseIndentOneSpace",
+				"title": "Reverse indent one space"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.indentOneSpace",
+				"key": "space",
+				"when": "editorTextFocus && !editorReadOnly && editorHasSelection"
+			},
+			{
+				"command": "extension.reverseIndentOneSpace",
+				"key": "shift+space",
+				"when": "editorTextFocus && !editorReadOnly && editorHasSelection"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"compile": "webpack --mode development",
+		"watch": "webpack --mode development --watch --display=minimal",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/node": "^8.10.39",
+		"friendly-errors-webpack-plugin": "^1.7.0",
+		"ts-loader": "^5.3.3",
+		"typescript": "^3.2.2",
+		"vscode": "^1.1.26",
+		"webpack": "^4.28.3",
+		"webpack-cli": "^3.2.0"
+	},
+	"__metadata": {
+		"id": "21a0ca11-beff-4be7-a773-d094b6a2ed93",
+		"publisherId": "151820df-5dc5-4c97-8751-eb84643203fa",
+		"publisherDisplayName": "Alexander"
+	}
+}
