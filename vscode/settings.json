@@ -5,7 +5,6 @@
   "editor.renderLineHighlight": "line",
   "editor.hideCursorInOverviewRuler": true,
   "editor.scrollBeyondLastLine": false,
-  "editor.lineHeight": 26,
   "editor.matchBrackets": false,
   "editor.occurrencesHighlight": false,
   "editor.multiCursorModifier": "alt",
@@ -18,19 +17,18 @@
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "solid",
   "editor.tabSize": 2,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
   "editor.cursorStyle": "line",
   // workbench
-  "workbench.tree.horizontalScrolling": true,
+  "workbench.list.horizontalScrolling": true,
   "workbench.statusBar.feedback.visible": false,
   "workbench.fontAliasing": "antialiased",
-  "workbench.activityBar.visible": false,
   "workbench.startupEditor": "none",
   "workbench.settings.editor": "json",
   "workbench.editor.showIcons": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   // window
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 1,
   "window.restoreWindows": "all",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "window.newWindowDimensions": "maximized",
@@ -41,12 +39,13 @@
   // fonts
   "editor.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 15,
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": false,
   "editor.fontSize": 15,
   // new file
   // "newFile.defaultFileExtension": ".go",
   // "newFile.showPathRelativeTo": "project",
   // search
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "search.smartCase": true,
   "search.exclude": {
     "dist": true,
@@ -71,15 +70,9 @@
   "explorer.openEditors.visible": 0,
   "explorer.confirmDragAndDrop": false,
   "explorer.decorations.badges": false,
-  // code runner
-  "code-runner.clearPreviousOutput": true,
-  "code-runner.executorMap": {
-    "python": "python3"
-  },
   // prettier
   "editor.formatOnSave": true,
   // code runner
-  "code-runner.runInTerminal": false,
   // sync settings
   // "sync.gist": "94288845f0956f08d4766b477001c9eb",
   // "sync.autoDownload": false,
@@ -87,16 +80,19 @@
   // "sync.forceDownload": false,
   // "sync.quietSync": false,
   // "sync.askGistName": false,
-  // vim
-  "vim.leader": " ",
-  "vim.cursorStylePerMode.normal": "underline",
+  // viwm
+  "vim.leader": ",",
+  "vim.cursorStylePerMode.normal": "block",
   "vim.useSystemClipboard": true,
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "red",
   // space map
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<leader>", "w"],
+      "before": [
+        "<leader>",
+        "w"
+      ],
       "after": [],
       "commands": [
         {
@@ -106,7 +102,10 @@
       ]
     },
     {
-      "before": ["<leader>", "q"],
+      "before": [
+        "<leader>",
+        "q"
+      ],
       "after": [],
       "commands": [
         {
@@ -116,7 +115,10 @@
       ]
     },
     {
-      "before": ["<leader>", "a"],
+      "before": [
+        "<leader>",
+        "a"
+      ],
       "after": [],
       "commands": [
         {
@@ -130,23 +132,50 @@
       ]
     },
     {
-      "before": ["K"],
-      "after": ["leader", "leader", "k"]
+      "before": [
+        "K"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "k"
+      ]
     },
     {
-      "before": ["J"],
-      "after": ["leader", "leader", "j"]
+      "before": [
+        "J"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "j"
+      ]
     },
     {
-      "before": ["<leader>", "i"],
-      "after": ["y", "i", "\""]
+      "before": [
+        "<leader>",
+        "i"
+      ],
+      "after": [
+        "y",
+        "i",
+        "\""
+      ]
     },
     {
-      "before": ["Y"],
-      "after": ["y", "$"]
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "y",
+        "$"
+      ]
     },
     {
-      "before": ["<leader>", "e"],
+      "before": [
+        "<leader>",
+        "c"
+      ],
       "after": [],
       "commands": [
         {
@@ -177,7 +206,10 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.settings.mode": "advanced",
   "gitlens.keymap": "chorded",
-  "gitlens.codeLens.scopes": ["containers", "document"],
+  "gitlens.codeLens.scopes": [
+    "containers",
+    "document"
+  ],
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -196,14 +228,23 @@
   "extensions.showRecommendationsOnlyOnDemand": true,
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  "window.titleBarStyle": "custom",
-  "workbench.iconTheme": "file-icons-colourless",
+  "window.titleBarStyle": "native",
+  "window.openFilesInNewWindow": "off",
+  "workbench.iconTheme": "material-icon-theme",
   "emmet.triggerExpansionOnTab": true,
-  "html.autoClosingTags": false,
-  "terminal.integrated.rendererType": "dom",
-  "workbench.colorTheme": "Ayu Mojave",
+  "html.autoClosingTags": true,
+  "terminal.integrated.rendererType": "auto",
+  "workbench.colorTheme": "Night Owl",
   "gitlens.mode.active": "zen",
   "workbench.sideBar.location": "right",
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "vim.camelCaseMotion.enable": true,
+  "vim.foldfix": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.enableNeovim": true,
+  "search.showLineNumbers": true,
+  "editor.parameterHints.cycle": true,
+  "dart.flutterHotRestartOnSave": true,
+  "workbench.activityBar.visible": false
 }

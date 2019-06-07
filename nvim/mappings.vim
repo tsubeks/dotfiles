@@ -1,5 +1,5 @@
 " If you use Alt in alacritty make sure you updated alacritty.yml as well
-let mapleader = " "
+let mapleader = ","
 
 """ Basic
 noremap <C-F> <C-D>
@@ -10,6 +10,7 @@ nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
 nmap <Leader>hs <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterUndoHunk
+
 
 " Toggle terminal on/off (neovim)
 " if has('nvim')
@@ -118,3 +119,8 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
+
+" FZF
+nnoremap <silent><leader>p :Files
+inoremap <silent><leader>p <Esc>:Files<Cr>
+vnoremap <silent><leader>p <Esc>:TComment<Cr>

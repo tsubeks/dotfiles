@@ -40,5 +40,13 @@
     "key": "ctrl+h",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+cmd+q",
+    "command": "workbench.action.quit"
+  },
+  {
+    "key": "cmd+q",
+    "command": "-workbench.action.quit"
   }
 ]

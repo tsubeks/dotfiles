@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/trututu/Code/dotfiles/.config/nvim'
-let g:netrw_dirhist_2='/Users/trututu/.config/fish'
-let g:netrw_dirhist_3='/Users/trututu/Code/dotfiles/.config/nvim'
-let g:netrw_dirhist_4='/Users/trututu/Code/dotfiles'
-let g:netrw_dirhist_5='/Users/trututu/Code/dotfiles/.config/tmux'
-let g:netrw_dirhist_6='/Users/trututu/Code/dotfiles/.config/fish'
-let g:netrw_dirhist_7='/Users/trututu/Code/don-front'
-let g:netrw_dirhist_8='/Users/trututu/.config/nvim'
-let g:netrw_dirhist_9='/Users/trututu/.zprezto'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/trututu/Code/lofti-space'
