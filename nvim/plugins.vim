@@ -1,21 +1,13 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Other at top hm
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'mhinz/vim-startify'
 
 " Files
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
-" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-" Git
-Plug 'airblade/vim-gitgutter'
-
 
 " Editor plugins
-Plug 'justinmk/vim-sneak'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
 Plug 'terryma/vim-multiple-cursors'
@@ -24,6 +16,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/vim-easy-align'
 
 " Syntax hilighting
@@ -35,11 +28,10 @@ Plug 'w0rp/ale'
 
 " Formating
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'editorconfig/editorconfig-vim'
 
 " Theme
+Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
-Plug 'connorholyday/vim-snazzy'
 
 " Line
 Plug 'itchyny/lightline.vim'

@@ -234,7 +234,7 @@
   "emmet.triggerExpansionOnTab": true,
   "html.autoClosingTags": true,
   "terminal.integrated.rendererType": "auto",
-  "workbench.colorTheme": "Night Owl",
+  "workbench.colorTheme": "Material Theme Darker High Contrast",
   "gitlens.mode.active": "zen",
   "workbench.sideBar.location": "right",
   "editor.suggestSelection": "first",
@@ -246,5 +246,8 @@
   "search.showLineNumbers": true,
   "editor.parameterHints.cycle": true,
   "dart.flutterHotRestartOnSave": true,
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
