@@ -45,7 +45,7 @@ noremap Gl <Esc>v$
 " nnoremap <A-a> va
 
 " Quit
-nnoremap <leader>q :q<cr>
+nnoremap <leader>q :q!<cr>
 nnoremap <leader>Q :qa!<cr>
 
 " Save
