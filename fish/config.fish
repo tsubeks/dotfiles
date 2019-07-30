@@ -6,6 +6,8 @@ set -x PATH "$PATH:$HOME/Code/Tools/flutter/bin"
 # set -x FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git"
 # one time run
 # defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
+set -x LC_ALL "en_US.UTF-8"
+
 
 alias vim "nvim"
 alias tmux "tmux -f ~/.config/tmux/tmux.conf"

@@ -6,6 +6,8 @@ Plug 'mhinz/vim-startify'
 " Files
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Editor plugins
 Plug 'mattn/emmet-vim'

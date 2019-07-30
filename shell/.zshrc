@@ -19,3 +19,9 @@ fi
 bindkey \^U backward-kill-line
 
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+  # Set Spaceship ZSH as a prompt
+  autoload -U promptinit; promptinit
+  prompt spaceship
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
