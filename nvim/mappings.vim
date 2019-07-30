@@ -147,7 +147,7 @@ nnoremap <Leader>d :Gdiff<CR>
 nnoremap <silent> <Leader>P :Files<CR>
 nnoremap <silent> <Leader>p :GFiles<CR>
 " nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
-nnoremap <silent> <Leader>c        :Colors<CR>
+nnoremap <silent> <Leader>C        :Colors<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
 nnoremap <silent> <Leader>l        :Lines<CR>
 command! -bang -nargs=* Ag
@@ -162,3 +162,5 @@ nnoremap <silent> <Leader>`        :Marks<CR>
 " nnoremap <silent> q: :History:<CR>
 " nnoremap <silent> q/ :History/<CR>
 
+autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
+autocmd FileType fzf tnoremap <buffer> <C-p> <Up>

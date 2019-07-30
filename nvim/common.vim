@@ -2,6 +2,13 @@ syntax on
 set mouse=a
 set termguicolors
 set background=dark
+
+set shell=fish
+
+" autoread
+set autoread
+au FocusGained * :checktime
+
 colorscheme onedark
 
 
