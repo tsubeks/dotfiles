@@ -156,10 +156,5 @@ nnoremap <silent> <Leader>`        :Marks<CR>
 nnoremap <silent> q: :History:<CR>
 nnoremap <silent> q/ :History/<CR>
 
-<<<<<<< HEAD
-autocmd FileType fzf tnoremap <buffer> <C-p> <Up>
-autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
-=======
 autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
 autocmd FileType fzf tnoremap <buffer> <C-p> <Up>
->>>>>>> 5265ced4cf1de1014a6550104c82f15358f9506d
