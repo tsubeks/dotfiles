@@ -1,6 +1,6 @@
 noremap  <Space> <Nop>
 map <Space> <leader>
-vnoremap <Space> <Esc>
+" vnoremap <Space> <Esc>
 
 map ; :
 
@@ -12,28 +12,17 @@ noremap <C-B> <C-U>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
-""" Mapings
-
-" Move lines around
-" nnoremap <silent><S-j> :m .+1<CR>==
-" nnoremap <silent><S-k> :m .-2<CR>==
-" inoremap <silent><S-j> <Esc>:m .+1<CR>==gi 
-" inoremap <silent><S-k> <Esc>:m .-2<CR>==gi 
-" vnoremap <silent><S-j> :m '>+1<CR>gv=gv
-" vnoremap <silent><S-k> :m '<-2<CR>gv=gv
-
-" Common fixes
-nnoremap <silent>gb :bn<Cr>
-nnoremap <silent>gB :bp<Cr>
-nnoremap <silent>ge :exec "e ".expand("<cWORD>")<Cr>
 
 
 " Kakoune style mappings
+"
+" Move
 noremap gj G
 noremap gk gg
 noremap gh 0
 noremap gl $
 
+" Select
 noremap Gj <Esc>VG
 noremap Gk <Esc>Vgg
 noremap Gh <Esc>v0
@@ -64,7 +53,7 @@ nmap ga <Plug>(EasyAlign)
 let g:tcomment_maps = 0
 nnoremap <silent><leader>c :TComment<Cr>
 inoremap <silent><leader>c <Esc>:TComment<Cr>a
-vnoremap <silent><leader>c :'<,'>TComment<Cr>
+vnoremap <silent><leader>c :TComment<Cr>
 call tcomment#type#Define('c', '// %s')
 
 let g:multi_cursor_use_default_mapping=0
@@ -90,6 +79,10 @@ vnoremap <silent><leader>p <Esc>:TComment<Cr>
 " ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
+" Common fixes
+nnoremap <silent>gb :bn<Cr>
+nnoremap <silent>gB :bp<Cr>
+nnoremap <silent>ge :exec "e ".expand("<cWORD>")<Cr>
 
 " ----------------------------------------------------------------------------
 " Tabs
@@ -115,14 +108,14 @@ nnoremap <leader>5 m`^i##### <esc>``6l
 " ----------------------------------------------------------------------------
 " Moving lines
 " ----------------------------------------------------------------------------
-nnoremap <silent> <C-k> :move-2<cr>
-nnoremap <silent> <C-j> :move+<cr>
-nnoremap <silent> <C-h> <<
-nnoremap <silent> <C-l> >>
-xnoremap <silent> <C-k> :move-2<cr>gv
-xnoremap <silent> <C-j> :move'>+<cr>gv
-xnoremap <silent> <C-h> <gv
-xnoremap <silent> <C-l> >gv
+nnoremap <silent> <S-k> :move-2<cr>
+nnoremap <silent> <S-j> :move+<cr>
+nnoremap <silent> <S-h> <<
+nnoremap <silent> <S-l> >>
+xnoremap <silent> <S-k> :move-2<cr>gv
+xnoremap <silent> <S-j> :move'>+<cr>gv
+xnoremap <silent> <S-h> <gv
+xnoremap <silent> <S-l> >gv
 xnoremap < <gv
 xnoremap > >gv
 
@@ -130,12 +123,13 @@ xnoremap > >gv
 " ----------------------------------------------------------------------------
 " <Leader>c Close quickfix/location window
 " ----------------------------------------------------------------------------
-nnoremap <leader>c :cclose<bar>lclose<cr>
+" nnoremap <leader>c :cclose<bar>lclose<cr>
 
 " ----------------------------------------------------------------------------
 " vim-fugitive
 " ----------------------------------------------------------------------------
-nmap     <Leader>g :Gstatus<CR>gg<c-n>
+" nmap     <Leader>g :Gstatus<CR>gg<c-n>
+nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>d :Gdiff<CR>
 
 " ----------------------------------------------------------------------------
@@ -159,8 +153,8 @@ nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
 xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
 nnoremap <silent> <Leader>`        :Marks<CR>
-" nnoremap <silent> q: :History:<CR>
-" nnoremap <silent> q/ :History/<CR>
+nnoremap <silent> q: :History:<CR>
+nnoremap <silent> q/ :History/<CR>
 
-autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
 autocmd FileType fzf tnoremap <buffer> <C-p> <Up>
+autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
