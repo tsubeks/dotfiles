@@ -4,7 +4,6 @@
 "  andreyorst/dotfiles
 "  kristijanhusak/neovim-config
 "
-
 set nocompatible
 let s:config_path = $HOME.'/.config/nvim/'
 

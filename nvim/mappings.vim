@@ -1,3 +1,10 @@
+" no arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+""" Leader
 noremap  <Space> <Nop>
 map <Space> <leader>
 " vnoremap <Space> <Esc>
@@ -11,8 +18,6 @@ noremap <C-B> <C-U>
 " Move across lines as they appear on display
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
-
-
 
 " Kakoune style mappings
 "
@@ -45,16 +50,9 @@ nnoremap <leader>s :update<cr>
 " nnoremap Q @q
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+" xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" TComment
-let g:tcomment_maps = 0
-nnoremap <silent><leader>c :TComment<Cr>
-inoremap <silent><leader>c <Esc>:TComment<Cr>a
-vnoremap <silent><leader>c :TComment<Cr>
-call tcomment#type#Define('c', '// %s')
+" nmap ga <Plug>(EasyAlign)
 
 let g:multi_cursor_use_default_mapping=0
 
@@ -74,10 +72,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 " ----------------------------------------------------------------------------
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
-" Common fixes
-nnoremap <silent>gb :bn<Cr>
-nnoremap <silent>gB :bp<Cr>
-nnoremap <silent>ge :exec "e ".expand("<cWORD>")<Cr>
 
 " ----------------------------------------------------------------------------
 " Tabs
@@ -91,14 +85,17 @@ nnoremap [t :tabp<cr>
 nnoremap <tab>   <c-w>w
 nnoremap <S-tab> <c-w>W
 
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s
+
 " ----------------------------------------------------------------------------
 " Markdown headings
 " ----------------------------------------------------------------------------
-nnoremap <leader>1 m`yypVr=``
-nnoremap <leader>2 m`yypVr-``
-nnoremap <leader>3 m`^i### <esc>``4l
-nnoremap <leader>4 m`^i#### <esc>``5l
-nnoremap <leader>5 m`^i##### <esc>``6l
+" nnoremap <leader>1 m`yypVr=``
+" nnoremap <leader>2 m`yypVr-``
+" nnoremap <leader>3 m`^i### <esc>``4l
+" nnoremap <leader>4 m`^i#### <esc>``5l
+" nnoremap <leader>5 m`^i##### <esc>``6l
 
 " ----------------------------------------------------------------------------
 " Moving lines
@@ -130,26 +127,45 @@ nnoremap <Leader>d :Gdiff<CR>
 " ----------------------------------------------------------------------------
 " vim-commentary
 " ----------------------------------------------------------------------------
-" map  gc  <Plug>Commentary
-" nmap gcc <Plug>CommentaryLine
+map  gc  <Plug>Commentary
+nmap gcc <Plug>CommentaryLine
 
-nnoremap <silent> <Leader>P :Files<CR>
-nnoremap <silent> <Leader>p :GFiles<CR>
-" nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
-nnoremap <silent> <Leader>C        :Colors<CR>
-nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-nnoremap <silent> <Leader>l        :Lines<CR>
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
-nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
-nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
-xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
-nnoremap <silent> <Leader>`        :Marks<CR>
+" ----------------------------------------------------------------------------
+" ALE
+" ----------------------------------------------------------------------------
+nmap ]a <Plug>(ale_next_wrap)
+nmap [a <Plug>(ale_previous_wrap)
+
+" ----------------------------------------------------------------------------
+" Ranger
+" ----------------------------------------------------------------------------
+
+nnoremap <silent> <leader>/ :Ranger<CR>
+
+" ----------------------------------------------------------------------------
+" Files
+" ----------------------------------------------------------------------------
+
+" ----------------------------------------------------------------------------
+" FZF
+" ----------------------------------------------------------------------------
+
+nnoremap <silent> <leader>f :GFiles<CR>
+nnoremap <silent> <leader>F :Files<CR>
+nnoremap <silent> <leader>l :BLines<CR>
+nnoremap <silent> <leader>L :Rg<CR>
+nnoremap <silent> <leader>c :Commands<CR>
+nnoremap <silent> <leader>C :Colors<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+" nnoremap <silent> <leader>`        :Marks<CR>
 nnoremap <silent> q: :History:<CR>
-nnoremap <silent> q/ :History/<CR>
+nnoremap <silent> q: :History:<CR>
+nnoremap <silent> <leader>h :History:<CR>
+
+" Hide statusline of terminal buffer
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 autocmd FileType fzf tnoremap <buffer> <C-n> <Down>
 autocmd FileType fzf tnoremap <buffer> <C-p> <Up>

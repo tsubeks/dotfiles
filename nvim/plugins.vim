@@ -1,43 +1,36 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Navigation
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'mhinz/vim-startify'
-
-" Files
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Editor plugins
-Plug 'mattn/emmet-vim'
-Plug 'alvan/vim-closetag'
+" Editor
 Plug 'terryma/vim-multiple-cursors'
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
 Plug 'junegunn/vim-easy-align'
 
-" Syntax hilighting
+" Language 
 Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+" ! Coc needs additional packages to be installed manually?
 
-" Linting
-Plug 'w0rp/ale'
-
-" Formating
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
-" Theme
-Plug 'morhetz/gruvbox'
+" Beauty
+Plug 'ayu-theme/ayu-vim'
+" Plug 'Yggdroot/indentLine'
 Plug 'joshdick/onedark.vim'
-
-" Line
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-signify'
 
 call plug#end()
