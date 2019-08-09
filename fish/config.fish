@@ -14,6 +14,11 @@ set -x FZF_DEFAULT_COMMAND "rg --files --hidden"
 #########
 # CLang #
 #########
+#
+#
+# Headers on MacOs
+# https://stackoverflow.com/questions/53169970/where-are-the-c-headers-in-macos-mojave?noredirect=1
+#
 
 # llvm is keg-only, which means it was not symlinked into /usr/local,
 # because macOS already provides this software and installing another version in
@@ -23,6 +28,7 @@ set -x FZF_DEFAULT_COMMAND "rg --files --hidden"
 set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
 
 # For compilers to find llvm you may need to set:
+set -gx CFLAGS "-I/usr/local/opt/llvm/include"
 set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
 # set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
 # To use the bundled libc++ please add the following LDFLAGS:

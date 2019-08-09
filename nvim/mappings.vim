@@ -70,14 +70,14 @@ let g:multi_cursor_quit_key            = '<Esc>'
 " ----------------------------------------------------------------------------
 " Buffers
 " ----------------------------------------------------------------------------
-nnoremap ]b :bnext<cr>
-nnoremap [b :bprev<cr>
+nnoremap <silent> <leader>b] :bnext<cr>
+nnoremap <silent> <leader>b[ :bprev<cr>
 
 " ----------------------------------------------------------------------------
 " Tabs
 " ----------------------------------------------------------------------------
-nnoremap ]t :tabn<cr>
-nnoremap [t :tabp<cr>
+nnoremap <silent> <leader>t] :tabn<cr>
+nnoremap <silent> <leader>t[ :tabp<cr>
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> | Circular windows navigation
@@ -121,8 +121,8 @@ xnoremap > >gv
 " vim-fugitive
 " ----------------------------------------------------------------------------
 " nmap     <Leader>g :Gstatus<CR>gg<c-n>
-nnoremap <Leader>g :Gstatus<CR>
-nnoremap <Leader>d :Gdiff<CR>
+nnoremap <Leader>g :vertical Gstatus<CR>
+nnoremap <Leader>d :Gvdiff<CR>
 
 " ----------------------------------------------------------------------------
 " vim-commentary
@@ -156,7 +156,7 @@ nnoremap <silent> <leader>l :BLines<CR>
 nnoremap <silent> <leader>L :Rg<CR>
 nnoremap <silent> <leader>c :Commands<CR>
 nnoremap <silent> <leader>C :Colors<CR>
-nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>bb :Buffers<CR>
 " nnoremap <silent> <leader>`        :Marks<CR>
 nnoremap <silent> q: :History:<CR>
 nnoremap <silent> q: :History:<CR>
