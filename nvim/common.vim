@@ -3,6 +3,9 @@ set mouse=a
 set termguicolors
 set background=dark
 
+set clipboard=unnamedplus
+set noswapfile
+
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 

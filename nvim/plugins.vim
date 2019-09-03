@@ -7,6 +7,8 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug '907th/vim-auto-save'
+
 " Editor
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
