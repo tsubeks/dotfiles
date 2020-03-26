@@ -1,0 +1,23 @@
+[user]
+	name = Bogdan Tsubeks
+	email = tsubeks@gmail.com
+	signingkey = *
+[commit]
+  gpgSign = false
+[push]
+  default = current
+[alias]
+  co = checkout
+  c = commit
+  st = status
+  br = branch
+  pl = pull
+  p = push
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[core]
+	editor = nvim
+	ignorecase = false
+	autocrlf = false
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
