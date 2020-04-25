@@ -37,8 +37,8 @@ set cmdheight=2
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=50
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 """""""""
 " Plug  "
@@ -75,10 +75,10 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 " ! Coc needs additional packages to be installed manually?
 
 " beauty
-Plug 'ayu-theme/ayu-vim'
-Plug 'joshdick/onedark.vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
@@ -89,12 +89,11 @@ call plug#end()
 """""""""
 " Theme "
 """""""""
-let ayucolor="dark"
-colorscheme ayu
+colorscheme onehalfdark
 set background=dark
 
 " Set this. Airline will handle the rest.
-let g:airline_theme='dark'
+let g:airline_theme='onehalfdark'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
@@ -154,8 +153,8 @@ noremap Gh <Esc>v0
 noremap Gl <Esc>v$
 
 " Quit
-nnoremap <leader>w :q!<cr>
-nnoremap <leader>W :qa!<cr>
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>Q :qa!<cr>
 
 " Save
 nnoremap <leader>s :update<cr>
