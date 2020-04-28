@@ -80,7 +80,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 " beauty
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-startify'
@@ -96,9 +96,9 @@ colorscheme onehalfdark
 set background=dark
 
 " Set this. Airline will handle the rest.
-let g:airline_theme='onehalfdark'
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+" let g:airline_theme='onehalfdark'
+" let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
@@ -204,19 +204,19 @@ let g:ranger_replace_netrw = 1
 let g:ranger_map_keys = 0
 
 " open in current window
-nnoremap <leader>// :Ranger<CR>
+nnoremap <leader>/ :Ranger<CR>
 
 " open window left
-nnoremap <leader>/h :lefta  vsp <bar> :wincmd h <bar> :Ranger <CR>
+" nnoremap <leader>/h :lefta  vsp <bar> :wincmd h <bar> :Ranger <CR>
 
-" open window right
-nnoremap <leader>/l :rightb vsp <bar> :wincmd l <bar> :Ranger <CR>
+" " open window right
+" nnoremap <leader>/l :rightb vsp <bar> :wincmd l <bar> :Ranger <CR>
 
-" open window above
-nnoremap <leader>/k :lefta  sp <bar>  :wincmd k <bar> :Ranger <CR>
+" " open window above
+" nnoremap <leader>/k :lefta  sp <bar>  :wincmd k <bar> :Ranger <CR>
 
-" open window below
-nnoremap <leader>/j :rightb sp <bar>  :wincmd j <bar> :Ranger <CR>
+" " open window below
+" nnoremap <leader>/j :rightb sp <bar>  :wincmd j <bar> :Ranger <CR>
 
 """"""""""""
 " coc.nvim "
