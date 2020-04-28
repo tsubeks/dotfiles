@@ -55,7 +55,7 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " navigation
-Plug 'vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'francoiscabrol/ranger.vim'
 " for ranger
 Plug 'rbgrouleff/bclose.vim'
