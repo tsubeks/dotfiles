@@ -3,6 +3,7 @@
 """""""""""
 syntax on
 set termguicolors
+set mouse=a
 
 set shell=zsh
 
@@ -54,9 +55,11 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " navigation
+Plug 'vim-tmux-navigator'
 Plug 'francoiscabrol/ranger.vim'
 " for ranger
 Plug 'rbgrouleff/bclose.vim'
+
 
 
 " Editor
@@ -164,7 +167,7 @@ nnoremap qq <nop>
 nnoremap Q @q
 
 " Moving windows
-nnoremap <leader>h :wincmd h<CR>
+    nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
