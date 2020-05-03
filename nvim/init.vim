@@ -57,6 +57,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'antoinemadec/coc-fzf'
 " for ranger
 Plug 'rbgrouleff/bclose.vim'
 
@@ -226,6 +229,12 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
+"" CocInstall coc-emmet, coc-prettier, coc-highlight
+
+" highlight colors 
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command! -nargs=0 C :CocConfig
 
@@ -239,4 +248,92 @@ nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
 
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
+
+" Use <c-space> to trigger completion.
+" inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use K to show documentation in preview window.
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 autocmd BufEnter *.tsx set filetype=typescript
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings using CoCList:
+" Show all diagnostics.
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+"""""""
+" FZF "
+"""""""
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
+
+nnoremap <silent> <space>b  :Buffers<CR>
+nnoremap <silent> <space>f  :GFiles<CR>
+nnoremap <silent> <space>F  :Files<CR>
+nnoremap <silent> <space>a  :<C-u>CocFzfList diagnostics<CR>
+nnoremap <silent> <space>db  :<C-u>CocFzfList diagnostics --current-buf<CR>
+nnoremap <silent> <space>c  :<C-u>CocFzfList commands<CR>
+nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<CR>
+nnoremap <silent> <space>l  :<C-u>CocFzfList location<CR>
+nnoremap <silent> <space>o  :<C-u>CocFzfList outline<CR>
+nnoremap <silent> <space>s  :<C-u>CocFzfList symbols<CR>
+nnoremap <silent> <space>S  :<C-u>CocFzfList services<CR>
+nnoremap <silent> <space>p  :<C-u>CocFzfListResume<CR>
