@@ -8,6 +8,7 @@ export LANGUAGE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -121,3 +122,4 @@ alias zshrc="nvim ~/.zshrc"
 # export LDFLAGS="-L/usr/local/opt/llvm/lib"
 # export CPPFLAGS="-I/usr/local/opt/llvm/include"
 # export PATH="/usr/local/opt/llvm/bin:$PATH"
+
