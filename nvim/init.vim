@@ -322,7 +322,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 """""""
 " FZF "
 """""""
-
+""" Install bat for preview 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
 
 nnoremap <silent> <space>b  :Buffers<CR>
