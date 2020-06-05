@@ -5,18 +5,19 @@ syntax on
 set termguicolors
 set mouse=a
 
-set shell=zsh
+set shell=bash
 
+set noshowmode
 set so=999
 set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set signcolumn=yes
+" set signcolumn=number
+set nu nornu
 set expandtab
 set smartindent
-set nu rnu
-set numberwidth=5
+" set numberwidth=5
 set nowrap
 set smartcase
 set noswapfile
@@ -38,8 +39,6 @@ set cmdheight=2
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=50
 
-" set colorcolumn=80
-" highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 """""""""
 " Plug  "
@@ -55,13 +54,11 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 " navigation
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf'
-" for ranger
-Plug 'rbgrouleff/bclose.vim'
 
 
 
@@ -76,19 +73,21 @@ Plug 'junegunn/vim-easy-align'
 
 " language 
 Plug 'sheerun/vim-polyglot'
-Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
-" ! Coc needs additional packages to be installed manually?
+" ! Does coc need additional packages to be installed manually?
 
 " beauty
+Plug 'itchyny/lightline.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-" Plug 'chriskempson/base16-vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+" Plug 'edkolev/tmuxline.vim'
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'dense-analysis/ale'
+" Plug 'mengelbrecht/lightline-bufferline'
+" Plug 'chriskempson/base16-vim'
+" Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
 
@@ -97,11 +96,16 @@ call plug#end()
 """""""""
 colorscheme onehalfdark
 set background=dark
+" colorscheme base16-material
+hi Normal guibg=NONE ctermbg=NONE
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-" Set this. Airline will handle the rest.
-" let g:airline_theme='onehalfdark'
-" let g:airline#extensions#ale#enabled = 1
-" let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:lightline = {
+      \ 'colorscheme': 'onehalfdark',
+      \ }
+
+autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
@@ -158,26 +162,28 @@ noremap Gk <Esc>Vgg
 noremap Gh <Esc>v0
 noremap Gl <Esc>v$
 
-" Quit
-nnoremap <leader>q :q!<cr>
-nnoremap <leader>Q :qa!<cr>
+""""""""""
+" Window "
+""""""""""
 
-" Save
-nnoremap <leader>s :update<cr>
+noremap <leader>wq :q!<cr>
+nnoremap <leader>wQ :qa!<cr>
+nnoremap <leader>ws :update<cr>
+" Moving windows
+nnoremap <leader>wh :wincmd h<CR>
+nnoremap <leader>wj :wincmd j<CR>
+nnoremap <leader>wk :wincmd k<CR>
+nnoremap <leader>wl :wincmd l<CR>
+nnoremap <leader>% :vsplit<CR>
+nnoremap <leader>" :split<CR>
 
 " qq to record, Q to replay
 nnoremap qq <nop>
 nnoremap Q @q
 
-" Moving windows
-    nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>% :vsplit<CR>
-nnoremap <leader>" :split<CR>
-
-" Moving lines
+"""""""""
+" lines "
+"""""""""
 nnoremap <silent> <S-k> :move-2<cr>
 nnoremap <silent> <S-j> :move+<cr>
 nnoremap <silent> <S-h> <<
@@ -207,19 +213,19 @@ let g:ranger_replace_netrw = 1
 let g:ranger_map_keys = 0
 
 " open in current window
-nnoremap <leader>/ :Ranger<CR>
+nnoremap <leader>// :Ranger<CR>
 
 " open window left
-" nnoremap <leader>/h :lefta  vsp <bar> :wincmd h <bar> :Ranger <CR>
+nnoremap <leader>/h :lefta  vsp <bar> :wincmd h <bar> :Ranger <CR>
 
 " " open window right
-" nnoremap <leader>/l :rightb vsp <bar> :wincmd l <bar> :Ranger <CR>
+nnoremap <leader>/l :rightb vsp <bar> :wincmd l <bar> :Ranger <CR>
 
 " " open window above
-" nnoremap <leader>/k :lefta  sp <bar>  :wincmd k <bar> :Ranger <CR>
+nnoremap <leader>/k :lefta  sp <bar>  :wincmd k <bar> :Ranger <CR>
 
 " " open window below
-" nnoremap <leader>/j :rightb sp <bar>  :wincmd j <bar> :Ranger <CR>
+nnoremap <leader>/j :rightb sp <bar>  :wincmd j <bar> :Ranger <CR>
 
 """"""""""""
 " coc.nvim "
@@ -258,20 +264,20 @@ nmap <leader>rn <Plug>(coc-rename)
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 
 " Use <c-space> to trigger completion.
-" inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -323,11 +329,12 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " FZF "
 """""""
 """ Install bat for preview 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
+let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.7 } }
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
 nnoremap <silent> <space>b  :Buffers<CR>
-nnoremap <silent> <space>f  :GFiles<CR>
-nnoremap <silent> <space>F  :Files<CR>
+nnoremap <silent> <space>f  :FZF ~<CR>
+nnoremap <silent> <space>F  :GFiles<CR>
 nnoremap <silent> <space>a  :<C-u>CocFzfList diagnostics<CR>
 nnoremap <silent> <space>db  :<C-u>CocFzfList diagnostics --current-buf<CR>
 nnoremap <silent> <space>c  :<C-u>CocFzfList commands<CR>
