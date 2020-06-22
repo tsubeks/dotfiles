@@ -167,7 +167,7 @@ nmap gcc <Plug>CommentaryLine
 
 " Ranger
 "
-let g:ranger_command_override = 'ranger --cmd "set show_hidden=true, column_ratios=[1,1]"'
+let g:ranger_command_override = 'ranger --cmd "set show_hidden=true" --cmd "set column_ratios=[1,1]"'
 
 " open ranger when vim open a directory
 let g:ranger_replace_netrw = 1
