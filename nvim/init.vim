@@ -82,7 +82,6 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 " Plug 'tpope/vim-vinegar'
-" Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -127,17 +126,6 @@ nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 " Window "
 """"""""""
 
-noremap <leader>wq :q!<cr>
-nnoremap <leader>wQ :qa!<cr>
-nnoremap <leader>ws :update<cr>
-" Moving windows
-nnoremap <leader>wh :wincmd h<CR>
-nnoremap <leader>wj :wincmd j<CR>
-nnoremap <leader>wk :wincmd k<CR>
-nnoremap <leader>wl :wincmd l<CR>
-nnoremap <leader>% :vsplit<CR>
-nnoremap <leader>" :split<CR>
-
 " qq to record, Q to replay
 nnoremap qq <nop>
 nnoremap Q @q
@@ -174,20 +162,23 @@ let g:ranger_replace_netrw = 1
 let g:ranger_map_keys = 0
 
 " open in current window
-nnoremap <leader>// :Ranger<CR>
-
-" open window left
+nnoremap <leader>/ :Ranger<CR>
 nnoremap <leader>/h :lefta  vsp <bar> :wincmd h <bar> :Ranger <CR>
-
-" " open window right
 nnoremap <leader>/l :rightb vsp <bar> :wincmd l <bar> :Ranger <CR>
-
-" " open window above
 nnoremap <leader>/k :lefta  sp <bar>  :wincmd k <bar> :Ranger <CR>
-
-" " open window below
 nnoremap <leader>/j :rightb sp <bar>  :wincmd j <bar> :Ranger <CR>
 
+nnoremap <silent> <leader>% :vsplit<cr>
+nnoremap <silent> <leader>" :split<cr>
+nnoremap <silent> <leader>s :w<cr>
+nnoremap <silent> <leader>wq :q!<cr>
+nnoremap <silent> <leader>wh :wincmd h<CR>
+nnoremap <silent> <leader>wj :wincmd j<CR>
+nnoremap <silent> <leader>wk :wincmd k<CR>
+nnoremap <silent> <leader>wl :wincmd l<CR>
+
+nnoremap gk gg
+nnoremap gj G
 
 """"""""""""
 " coc.nvim "
@@ -241,12 +232,3 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 nnoremap <silent> <space>b  :Buffers<CR>
 nnoremap <silent> <space>f  :FZF ~<CR>
 nnoremap <silent> <space>F  :GFiles<CR>
-nnoremap <silent> <space>a  :<C-u>CocFzfList diagnostics<CR>
-nnoremap <silent> <space>db  :<C-u>CocFzfList diagnostics --current-buf<CR>
-nnoremap <silent> <space>c  :<C-u>CocFzfList commands<CR>
-nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<CR>
-nnoremap <silent> <space>l  :<C-u>CocFzfList location<CR>
-nnoremap <silent> <space>o  :<C-u>CocFzfList outline<CR>
-nnoremap <silent> <space>s  :<C-u>CocFzfList symbols<CR>
-nnoremap <silent> <space>S  :<C-u>CocFzfList services<CR>
-nnoremap <silent> <space>p  :<C-u>CocFzfListResume<CR>
