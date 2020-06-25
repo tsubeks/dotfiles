@@ -13,7 +13,10 @@
     "javascriptreact",
     "css",
     "markdown",
-    "md"
+    "md",
+    "html",
+    "vue-html",
+    "vue"
   ],
   "languageserver": {
     "clangd": {

@@ -10,6 +10,7 @@ set shell=bash
 set showmatch
 set matchtime=2
 set matchpairs+=<:>
+set sidescroll=1
 
 set noshowmode
 set so=999
@@ -57,31 +58,13 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" navigation
+Plug 'psliwka/vim-smoothie'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
-
-" Editor
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'junegunn/vim-easy-align'
-Plug 'airblade/vim-rooter'
-
-" language 
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
-
-" beauty
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-
-" Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
@@ -99,14 +82,9 @@ map <silent> <leader>ee :e $HOME/.config/nvim/init.vim<CR>
 map <silent> <leader>dd :e $HOME/.config/nvim/dev.dict<CR>
 setl dictionary+=$HOME/.config/nvim/dev.dict
 
-" clear search hilight
-" nnoremap <silent> <CR> :nohlsearch<CR><CR>
-
 map ? /\<\><Left><Left>
 map <silent> <leader>n :nohlsearch<CR>
 
-nnoremap <silent> gb :bn<CR>
-nnoremap <silent> gB :bp<CR>
 
 " no arrow keys
 noremap <Up> <NOP>
@@ -125,7 +103,6 @@ nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 """"""""""
 " Window "
 """"""""""
-
 " qq to record, Q to replay
 nnoremap qq <nop>
 nnoremap Q @q
@@ -153,32 +130,36 @@ nnoremap <Leader>d :Gvdiff<CR>
 map  gc  <Plug>Commentary
 nmap gcc <Plug>CommentaryLine
 
-" Ranger
-"
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true" --cmd "set column_ratios=[1,1]"'
-
-" open ranger when vim open a directory
 let g:ranger_replace_netrw = 1
 let g:ranger_map_keys = 0
 
-" open in current window
-nnoremap <leader>/ :Ranger<CR>
-nnoremap <leader>/h :lefta  vsp <bar> :wincmd h <bar> :Ranger <CR>
-nnoremap <leader>/l :rightb vsp <bar> :wincmd l <bar> :Ranger <CR>
-nnoremap <leader>/k :lefta  sp <bar>  :wincmd k <bar> :Ranger <CR>
-nnoremap <leader>/j :rightb sp <bar>  :wincmd j <bar> :Ranger <CR>
+"???
+nnoremap <silent> gh :wincmd h<CR>
+nnoremap <silent> gj :wincmd j<CR>
+nnoremap <silent> gk :wincmd k<CR>
+nnoremap <silent> gl :wincmd l<CR>
 
-nnoremap <silent> <leader>% :vsplit<cr>
-nnoremap <silent> <leader>" :split<cr>
-nnoremap <silent> <leader>s :w<cr>
-nnoremap <silent> <leader>wq :q!<cr>
-nnoremap <silent> <leader>wh :wincmd h<CR>
-nnoremap <silent> <leader>wj :wincmd j<CR>
-nnoremap <silent> <leader>wk :wincmd k<CR>
-nnoremap <silent> <leader>wl :wincmd l<CR>
+" nnoremap <silent> <leader>/ :vsplit<cr>
+" nnoremap <silent> <leader>- :split<cr>
+" nnoremap <silent> <leader>bq :q!<cr>
+" nnoremap <silent> <leader>bu :update<cr>
+" nnoremap <silent> <leader>bn :bn<CR>
+" nnoremap <silent> <leader>bp :bp<CR>
+" nnoremap <silent> <leader>bl :ls<CR>
 
-nnoremap gk gg
-nnoremap gj G
+" nnoremap <silent> <leader>to :tabnew<CR>
+" nnoremap <silent> <leader>tn :tabn<CR>
+" nnoremap <silent> <leader>tp :tabp<CR>
+" nnoremap <silent> <leader>bo :Ranger<CR>
+command! -nargs=0 R :Ranger
+
+map ; :
+map U :redo<CR>
+map <C-r> <nop>
+
+" nnoremap gk gg
+" nnoremap gj G
 
 """"""""""""
 " coc.nvim "
@@ -216,19 +197,7 @@ let g:coc_global_extensions = [
       \'coc-ecdict'
       \]
 
-""""""""""""""
-" vim-rooter "
-""""""""""""""
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-let g:rooter_patterns = ['.root', 'package.json', '.git/']
-
-"""""""
-" FZF "
-"""""""
-""" Install bat for preview 
-let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.7 } }
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-
-nnoremap <silent> <space>b  :Buffers<CR>
-nnoremap <silent> <space>f  :FZF ~<CR>
-nnoremap <silent> <space>F  :GFiles<CR>
+nmap <leader>p :CocCommand prettier.formatFile<cr>
+vmap <leader>p <Plug>(coc-format-selected)
