@@ -63,7 +63,7 @@
 		"acorn": "^5.7.1",
 		"eslint": "^5.1.0",
 		"fuse.js": "^3.2.1",
-		"node-fetch": "^2.1.2",
+		"node-fetch": "^2.6.7",
 		"open": "0.0.5",
 		"yaml-ast-parser": "0.0.40"
 	},
